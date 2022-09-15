@@ -32,16 +32,51 @@ body {
     font-family: 'PT Sans';
     font-weight: 400;
     background-color: #ffffff;
+
+    :focus {
+        background-color: rgb(117, 117, 59);
+        border-radius: 2px;
+    }
 }
-header {
-    max-width: 880px;
-    padding: 0 10px;
-    height: 175px;
-    margin: 0 auto;
-    display: flex;
-    flex-direction: column;
-    background-color: #ffffff;
+@media (min-width: 880px) {
+    .header-a {
+        max-width: 880px;
+        height: 175px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        @media (max-width: 900px) {
+            padding: 0 10px;
+        }
+    }
+    .header-b {
+        position: absolute;
+        bottom: 1600px;
+        visibility: hidden;
+    }
 }
+
+@media (max-width: 879px) {
+    .header-b {
+        max-width: 880px;
+        padding: 0 10px;
+        height: 175px;
+        margin: 0 auto;
+        display: flex;
+        flex-direction: column;
+        background-color: #ffffff;
+        @media (max-width: 500px) {
+            height: 100px;
+        }
+    }
+    .header-a{
+        position: absolute;
+        bottom: 600px;
+        visibility: hidden;
+    }
+}
+
 .container-top {
     height: 57px;
     line-height: 25px;
@@ -50,6 +85,13 @@ header {
     white-space: nowrap;
     display: flex;
     justify-content: space-between;
+    @media (max-width: 500px) {
+        padding: 0;
+        height: 25px;
+    }
+}
+.menu {
+    position: absolute;
 }
 .container-top-lang {
     letter-spacing: 10px;
@@ -74,6 +116,7 @@ header {
             background-color: #000000;
         }
 }
+
 .container-top-sitename {
     font-family: 'Bebas', sans-serif;
     font-size: 10px;
@@ -87,6 +130,11 @@ header {
         letter-spacing: 0.34em;
     }
 }
+.cts-b {
+    margin: 0 auto;
+    padding: 0 0 14px 0;
+    
+}
 .container-top-ordering {
     font-family: 'AkzidenzGrotesk', sans-serif;
     font-size: 15px;
@@ -94,13 +142,19 @@ header {
     text-decoration: underline;
     color: #000000;
 }
+.cto-b {
+    position: absolute;
+    right: 10px;
+}
 .container-mid {
     
 }
 .container-mid-menu {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
+    
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    
     
     // .container-mid-menu-left__item
 
@@ -112,13 +166,27 @@ header {
         text-transform: uppercase;
         letter-spacing: 0.1em;
         color: #000000;
+        @media (max-width: 700px) {
+            position: relative;
+            bottom: 300px;
+        }
     }
 }
 .container-mid-sitelogo {
-    text-align: center;
+    
+}
+.cms-b {
+    display: block;
+    margin: 0 auto;
+    @media (max-width: 500px) {
+        width: 150px;
+    }
 }
 .container-bottom {
     height: 64px;
+    @media (max-width: 500px) {
+        height: 25px;
+    }
 }
 .container-bottom-sitename {
     text-align: center;
@@ -129,6 +197,9 @@ header {
     letter-spacing: 0.8em;
     color: #000000;
     padding: 23px 0 0 16px;
+    @media (max-width: 500px) {
+        padding: 16px 0 0 16px;
+    }
 }
 
 
@@ -142,6 +213,7 @@ header {
     height: 425px;
     max-width: 100%;
     display: flex;
+    margin: 0 0 75px 0;
 }
 .catering-left {
     flex: 1 1 50%;
@@ -221,13 +293,31 @@ header {
 
 .features {
     display: flex;
-    width: 880px;
+    max-width: 880px;
     min-height: 675px;
     margin: 0 auto;
+    @media (max-width: 900px) {
+        padding: 0 10px;
+    }
 }
+
+@media (max-width: 690px) {
+    .features {
+        flex-wrap: wrap;
+    }
+}
+
 .features-col {
     flex: 1 1 25%;
-    margin: 75px 0 0 0;
+    margin: 0 0 75px 0;
+    display: flex;
+    flex-direction: column;
+    @media (max-width: 690px) {
+        flex: 1 1 50%;
+    }
+}
+.small-image {
+       max-width: 100%;
 }
 .subtitle {
     font-family: 'AkzidenzGrotesk', sans-serif;
@@ -244,8 +334,9 @@ header {
 .text-block2 {
     color: #000000;
     font-weight: 500;
-    width: 190px;
-    padding: 36px 0 32px 5px;
+    max-width: 190px;
+    padding: 36px 10px 32px 5px;
+    flex: 1 1 auto;
 }
 .btn-black {
     background-color: #000000;
@@ -268,18 +359,31 @@ header {
     display: flex;
     max-width: 100%;
     height: 150px;
-    margin: 0 0 50px 0;
+    margin: 5px 0 50px 0;
 }
 .wcu-col1 {
     flex: 1 1 50%;
     background-color: #000000;
     height: 150px;
+    @media (max-width: 880px) {
+        flex: 0 0 440px;
+    }
+    @media (max-width: 440px) {
+        max-width: 100%;
+    }
 }
 .title-block3 {
     color: #ffffff;
     text-align: right;
     padding: 0 60px 0 0;
     line-height: 150px;
+    @media (max-width: 900px) {
+        text-align: left;
+        padding: 0 0 0 20px;
+    }
+    @media (max-width: 440px) {
+        font-size: 35px;
+    }
 }
 
 .wcu-col2 {
@@ -294,6 +398,9 @@ header {
     margin: 0 auto;
     display: flex;
     flex-wrap: wrap;
+    @media (max-width: 800px) {
+        flex-direction: column;
+    }
 }
 .wcu-col {
     flex: 1 1 50%;
@@ -316,12 +423,15 @@ header {
     & .icon4 {
         background: url('../img/icon_4.png') center no-repeat #000000;
     }
+    @media (max-width: 900px) {
+        padding: 0 10px;
+    }
 }
 .subtitle-block3 {
-    padding: 4px 0 0 12px;
+    padding: 4px 12px 0 12px;
 }
 .text-block3 {
-    padding: 24px 0 0 13px;
+    padding: 24px 13px 0 13px;
     font-weight: 700;
 }
 .container {
@@ -341,12 +451,26 @@ header {
     margin: 0 auto;
     height: 249px;
     display: flex;
+    @media (max-width: 900px) {
+        padding: 0 10px;
+    }
+    @media (max-width: 800px) {
+        height: 207px;
+    }
+    @media (max-width: 690px) {
+        flex-direction: column;
+        height: 100%;
+    }
 }
 .shr1-col1 {
     flex: 1 1 50%;
+    padding: 0 20px 0 0;
 }
 .title-block4 {
     padding: 82px 0 0 0;
+    @media (max-width: 800px) {
+        padding: 42px 0 0 0;
+    }
 }
 .address {
     background: url('../img/sh_icon1.png') no-repeat;
@@ -368,6 +492,12 @@ header {
     margin: 171px 0 0 0;
     padding: 0 0 0 34px;
     font-weight: 700;
+    @media (max-width: 800px) {
+        margin: 129px 0 0 0;
+    }
+    @media (max-width: 690px) {
+        margin: 25px 0 0 0;
+    }
 }
 .social-media {
     width: 189px;
@@ -399,7 +529,7 @@ header {
 
 
 .say-hello-row2 {
-    margin: 24px 0 0 0;
+    margin: 24px 0 10px 0;
     display: flex;
 }
 .shr2-col1 {
@@ -412,9 +542,18 @@ header {
 .shr2-col2 {
     flex: 1 1 50%;
     background-color: #000000;
+    @media (max-width: 980px) {
+        flex: 0 0 490px;
+    }
+    @media (max-width: 490px) {
+        max-width: 100%;
+    }
 }
 .col2-container {
     padding: 54px 0 0 60px;
+    @media (max-width: 800px) {
+        padding: 54px 10% 0 10%;
+    }
 }
 .subtitle-block4 {
     color: #ffffff;
@@ -422,30 +561,34 @@ header {
 }
 .form {
     padding: 28px 0 0 0;
+    max-width: 374px;
     &__name {
         width: 374px;
+        max-width: 100%;
         height: 50px;
         border: 2px solid #959595;
         background-color: #252525;
         margin: 0 0 25px 0;
-        padding: 0 0 0 18px;
+        padding: 0 18px 0 18px;
         color: #959595;
     }
     &__email {
         width: 374px;
+        max-width: 100%;
         height: 50px;
         border: 2px solid #959595;
         background-color: #252525;
         margin: 0 0 25px 0;
-        padding: 0 0 0 18px;
+        padding: 0 18px 0 18px;
         color: #959595;
     }
     &__textarea {
         width: 374px;
+        max-width: 100%;
         height: 100px;
         border: 2px solid #959595;
         background-color: #252525;
-        padding: 15px 0 0 18px;
+        padding: 15px 18px 0 18px;
         resize: none;
         color: #959595;
     }
@@ -469,6 +612,13 @@ footer {
     margin: 0 auto;
     height: 126px;
     display: flex;
+    @media (max-width: 900px) {
+        padding: 0 10px;
+    }
+    @media (max-width: 660px) {
+        flex-direction: column-reverse;
+        height: 116px;
+    }
 }
 .text-footer {
     flex: 1 1 50%;
@@ -478,11 +628,20 @@ footer {
     & span {
         text-decoration: underline;
     }
+    @media (max-width: 660px) {
+        text-align: center;
+        line-height: 30px;
+        flex: 1 1 30px;
+    }
 }
 .footer-logo {
     flex: 1 1 50%;
     background: url('../img/footer_logo.png') no-repeat;
     background-position: right center;
+    @media (max-width: 660px) {
+        background-position: center;
+        flex: 1 1 53px;
+    }
 }
 
 
